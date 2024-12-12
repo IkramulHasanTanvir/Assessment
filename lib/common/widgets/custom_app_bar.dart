@@ -1,5 +1,6 @@
 import 'package:assessment/common/constants.dart';
 import 'package:assessment/common/navigator.dart';
+import 'package:assessment/routes/route_name.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -61,7 +62,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               Row(
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        CustomNavigator.pushNamed(RouteName.searchProductsScreen);
+                      },
                       icon: const Icon(
                         Icons.search,
                         color: Colors.black,

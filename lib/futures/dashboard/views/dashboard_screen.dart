@@ -2,9 +2,13 @@ import 'package:assessment/common/constants.dart';
 import 'package:assessment/common/utils/assets_path.dart';
 import 'package:assessment/common/widgets/custom_app_bar.dart';
 import 'package:assessment/common/widgets/small_promotion_card.dart';
+import 'package:assessment/futures/dashboard/views/widgets/categories_box.dart';
+import 'package:assessment/futures/dashboard/views/widgets/most_popular_card.dart';
+import 'package:assessment/futures/dashboard/views/widgets/top_sales_card.dart';
+import 'package:assessment/futures/home_pages/views/widgets/section_title.dart';
+import 'package:assessment/futures/home_pages/views/widgets/top_section.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -14,50 +18,17 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  final PageController _pageController = PageController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Dashboard',backButtonShow: false),
+      appBar: const CustomAppBar(title: 'Dashboard', backButtonShow: false),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const TopSection(),
             Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Image.asset(AssetsPath.appLogo, height: 22),
-            ),
-            SizedBox(
-              height: 176,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 4,
-                controller: _pageController,
-                itemBuilder: (context, index) {
-                  return const SmallPromotionCard(
-                    title: '20% Discount on All Tires',
-                    subtitle: 'Avail this discount by 23rd June',
-                    image: AssetsPath.tires,
-                  );
-                },
-              ),
-            ),
-            Center(
-              child: SmoothPageIndicator(
-                controller: _pageController,
-                count: 4,
-                effect: const ExpandingDotsEffect(
-                  dotHeight: 8,
-                  dotWidth: 8,
-                  spacing: 4,
-                  activeDotColor: primaryColor,
-                  dotColor: dotColor,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -65,13 +36,70 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     'Company : KPMS',
                     style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 16,
-                          color: companyColors,
-                        )),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: companyColors,
+                    )),
                   ),
                   const Divider(color: dividerColors),
                   const SizedBox(height: 8),
+                  const SectionTitle(title: 'Categories'),
+                  const SizedBox(height: 8),
+                  const SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        CategoriesBox(),
+                        CategoriesBox(),
+                        CategoriesBox(),
+                        CategoriesBox(),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  const SectionTitle(title: 'Most Popular'),
+                  const SizedBox(height: 8),
+                  const SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        MostPopularCard(
+                          isDiscount: true,
+                        ),
+                        SizedBox(width: 10),
+                        MostPopularCard(),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const SectionTitle(title: 'Top Sales', viewAllShow: false),
+                  const SizedBox(height: 16),
+                  const TopSalesCard(isDiscount: true,),
+                  const SizedBox(height: 16),
+                  const TopSalesCard(),
+                  const SizedBox(height: 16),
+                  const TopSalesCard(),
+                  const SizedBox(height: 16),
+                  Center(
+                      child: Text(
+                    'Load More',
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.w600)),
+                  )),
+                  const SizedBox(height: 16),
+                  const SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        SmallPromotionCard(
+                          title: '20% Discount on All Tires',
+                          subtitle: 'Avail this discount by 23rd June',
+                          image: AssetsPath.tires,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

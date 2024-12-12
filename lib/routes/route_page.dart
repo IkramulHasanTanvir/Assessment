@@ -3,9 +3,12 @@ import 'package:assessment/futures/auth/views/screens/forgot_pass_screen.dart';
 import 'package:assessment/futures/auth/views/screens/login_screen.dart';
 import 'package:assessment/futures/auth/views/screens/pin_confirmation_screen.dart';
 import 'package:assessment/futures/dashboard/views/dashboard_screen.dart';
-import 'package:assessment/futures/home_page/views/home_screen.dart';
+import 'package:assessment/futures/home_pages/views/home_screen.dart';
 import 'package:assessment/futures/intro_pages/views/promotion_screen.dart';
 import 'package:assessment/futures/intro_pages/views/splash_screen.dart';
+import 'package:assessment/futures/navigation/views/bottom_nav_section.dart';
+import 'package:assessment/futures/product_details/views/product_details_screen.dart';
+import 'package:assessment/futures/search_products/views/search_products.dart';
 import 'package:assessment/routes/route_name.dart';
 
 abstract class RoutePage {
@@ -20,5 +23,8 @@ abstract class RoutePage {
     RouteName.pinConfirmationScreen: (context) => const PinConfirmationScreen(),
     RouteName.homeScreen: (context) => const HomeScreen(),
     RouteName.dashboardScreen: (context) => const DashboardScreen(),
+    RouteName.bottomNavBar: (context) => const BottomNavSection(),
+    RouteName.productDetailsScreen: (context) => const ProductDetailsScreen(),
+    RouteName.searchProductsScreen: (context) => const SearchProducts(),
   };
 }

@@ -11,21 +11,27 @@ class DiscountBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.sizeOf(context);
     return isBigBackground
         ? Stack(
             children: [
-              SvgPicture.asset(AssetsPath.discountBackSVG),
+              SvgPicture.asset(AssetsPath.discountBackSVG, width: 350),
               Positioned(
-                  right: 0, child: SvgPicture.asset(AssetsPath.discountTopSVG)),
+                  right: 0,
+                  top: size.width > 400 ? null : 24,
+                  child: SvgPicture.asset(AssetsPath.discountTopSVG,
+                      width: size.width > 400 ? null : 175)),
               child,
             ],
           )
         : Stack(
             children: [
-              SvgPicture.asset(AssetsPath.discountBackSmallSVG,width: 350,),
+              SvgPicture.asset(AssetsPath.discountBackSmallSVG, width: 350),
               Positioned(
                   right: 0,
-                  child: SvgPicture.asset(AssetsPath.discountTopSmallSVG,)),
+                  child: SvgPicture.asset(
+                    AssetsPath.discountTopSmallSVG,
+                  )),
               child,
             ],
           );

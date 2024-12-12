@@ -13,4 +13,5 @@ abstract class RouteName {
   static String viewReportScreen = '/viewReportScreen';
   static String settingScreen = '/settingScreen';
   static String languageScreen = '/languageScreen';
+  static String bottomNavBar = '/bottomNavBar';
 }

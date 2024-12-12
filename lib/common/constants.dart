@@ -11,6 +11,10 @@ const Color checkMarkColors = Color(0xFF38AF6D);
 const Color companyColors = Color(0xFF9D9D9D);
 const Color lockColor = Color(0xFFF08775);
 const Color cardColor = Color(0xFFFFD9D9);
+const Color allCardColor = Color(0xFFFBDDD8);
+const Color viewAllColor = Color(0xFFFF804D);
+const Color navIndicatorColor = Color(0xFFA30000);
+const Color cardSubtitleColor = Color(0xFF595C5F);
 
 const Color primaryColor = Color(0xFFCC0000);
 

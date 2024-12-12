@@ -43,8 +43,8 @@ class _PromotionScreenState extends State<PromotionScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 422,
+              Container(
+                constraints: const BoxConstraints(maxWidth: 442,maxHeight: 422),
                 child: PageView.builder(
                   itemCount: 4,
                   controller: _pageController,

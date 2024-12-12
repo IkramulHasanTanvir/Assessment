@@ -53,7 +53,7 @@ OutlineInputBorder _outlineInputBorder() {
 OutlineInputBorder _enabledBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
-    borderSide: const BorderSide(color: dividerTextColors),
+    borderSide:  BorderSide(color: dividerTextColors.withOpacity(0.3)),
   );
 }
 
