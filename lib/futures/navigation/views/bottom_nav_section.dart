@@ -1,4 +1,5 @@
 import 'package:assessment/common/constants.dart';
+import 'package:assessment/futures/Report/report_screen.dart';
 import 'package:assessment/futures/dashboard/views/dashboard_screen.dart';
 import 'package:assessment/futures/setting/views/settings_screen.dart';
 import 'package:assessment/futures/transactions/views/transactions_date.dart';
@@ -19,7 +20,7 @@ class _BottomNavSectionState extends State<BottomNavSection> {
     DashboardScreen(),
     DashboardScreen(),
     TransactionsDate(),
-    DashboardScreen(),
+    ReportScreen(),
     SettingsScreen(),
   ];
 
@@ -84,7 +85,7 @@ class _BottomNavSectionState extends State<BottomNavSection> {
               ),
               if (curvedNavigationBarIndex != 2)
                 const Text(
-                  "Receipts",
+                  "Transaction",
                   style: TextStyle(color: Colors.white, fontSize: 10),
                 ),
             ],
@@ -99,7 +100,7 @@ class _BottomNavSectionState extends State<BottomNavSection> {
               ),
               if (curvedNavigationBarIndex != 3)
                 const Text(
-                  "Analytics",
+                  "Reports",
                   style: TextStyle(color: Colors.white, fontSize: 10),
                 ),
             ],

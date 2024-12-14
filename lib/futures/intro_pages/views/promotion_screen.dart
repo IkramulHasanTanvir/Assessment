@@ -106,19 +106,25 @@ class _PromotionScreenState extends State<PromotionScreen> {
             Padding(
               padding: const EdgeInsets.all(24.0),
               child: ElevatedButton(
-                onPressed: () {
-                  CustomNavigator.pushAndRemoveAll(RouteName.loginScreen);
-                },
-                child: Text(
-                  'Next',
-                  style: GoogleFonts.poppins(),
-                ),
+                onPressed: _onTapMoveNext,
+                child: const Text('Next'),
               ),
-            ),
+            )
           ],
         ),
       ),
     );
+  }
+
+  void _onTapMoveNext() {
+    if (_pageController.page == promotions.length - 1) {
+      CustomNavigator.pushAndRemoveAll(RouteName.loginScreen);
+    } else {
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   @override

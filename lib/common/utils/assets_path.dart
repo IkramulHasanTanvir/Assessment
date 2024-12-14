@@ -24,4 +24,6 @@ class AssetsPath {
   static const String hiclipart = '$_assetsPath/hiclipart.png';
   static const String hiclipart1 = '$_assetsPath/hiclipart1.png';
   static const String battary = '$_assetsPath/battary.png';
+  static const String history1 = '$_assetsPath/history1.png';
+  static const String Group102 = '$_assetsPath/Group102.png';
 }

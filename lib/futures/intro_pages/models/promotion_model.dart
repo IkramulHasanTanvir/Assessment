@@ -29,6 +29,17 @@ List<PromotionModel> promotions = [
     title: '20% Discount on All Tires',
     subtitle: 'Avail this discount by 23rd June',
     imageUrl: AssetsPath.hiclipart1,
-
+  ),
+  PromotionModel(
+    titleName: 'Some of Promotional Content as Product wise-001',
+    title: '20% Discount on All Tires',
+    subtitle: 'Avail this discount by 23rd June',
+    imageUrl: AssetsPath.tires,
+  ),
+  PromotionModel(
+    titleName: 'Some of Promotional Content as Product wise-002',
+    title: '20% Discount on All Tires',
+    subtitle: 'Avail this discount by 23rd June',
+    imageUrl: AssetsPath.hiclipart1,
   ),
 ];

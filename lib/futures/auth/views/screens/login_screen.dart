@@ -1,4 +1,6 @@
+import 'package:assessment/common/constants.dart';
 import 'package:assessment/common/navigator.dart';
+import 'package:assessment/common/widgets/snack_bar.dart';
 import 'package:assessment/futures/auth/views/widgets/auth_bottom.dart';
 import 'package:assessment/futures/auth/views/widgets/custom_divider.dart';
 import 'package:assessment/futures/auth/views/widgets/custom_text_field.dart';
@@ -46,7 +48,24 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: size.height * 0.032),
             ElevatedButton(
               onPressed: () {
-                CustomNavigator.pushAndRemoveAll(RouteName.homeScreen);
+                if (_globalKey.currentState?.validate() == true) {
+                  if (_userIdTEController.text.trim() == "admin" &&
+                      _passwordTEController.text.trim() == "admin") {
+                    CustomNavigator.pushAndRemoveAll(
+                        RouteName.homeScreen); // Navigate to home
+                  } else {
+                    snackBar(
+                        title: "Login Failed",
+                        content:
+                            "Invalid username or password. Please try again.",
+                        actionColor: primaryColor);
+                  }
+                } else {
+                  snackBar(
+                      title: "Form Incomplete",
+                      content: "Please fill out all fields correctly.",
+                      actionColor: Colors.amber);
+                }
               },
               child: const Text('Login'),
             ),
