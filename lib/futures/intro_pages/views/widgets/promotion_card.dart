@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PromotionCard extends StatelessWidget {
-  const PromotionCard(
-      {super.key,
-      required this.title,
-      required this.subtitle,
-      required this.image});
+  const PromotionCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.image,
+  });
 
   final String title;
   final String subtitle;
@@ -19,9 +20,9 @@ class PromotionCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 27.0),
       child: DiscountBackground(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 54,vertical: 44),
-            child: Column(
-                    children: [
+        padding: const EdgeInsets.symmetric(horizontal: 54, vertical: 44),
+        child: Column(
+          children: [
             Text(title,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
@@ -42,10 +43,11 @@ class PromotionCard extends StatelessWidget {
                     ),
                   )),
             ),
-            Image.asset(image, width: 282, height: 176)
-                    ],
-                  ),
-          )),
+            Image.asset(image, width: 282, height: 176),
+            const SizedBox(height: 8),
+          ],
+        ),
+      )),
     );
   }
 }

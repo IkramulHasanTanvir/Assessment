@@ -1,6 +1,8 @@
 import 'package:assessment/common/constants.dart';
+import 'package:assessment/common/utils/assets_path.dart';
 import 'package:assessment/common/widgets/card_image.dart';
 import 'package:assessment/common/widgets/custom_app_bar.dart';
+import 'package:assessment/futures/navigation/views/bottom_nav_section.dart';
 import 'package:assessment/futures/navigation/views/widgets/bottom_nav_bar.dart';
 import 'package:assessment/futures/product_details/views/widgets/product_details_view.dart';
 import 'package:flutter/material.dart';
@@ -38,11 +40,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     setState(() {});
                   },
                   itemBuilder: (context, index) {
-                    return const Padding(
+                    return  const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: CardImage(
                         isDiscount: true,
-                        isProductDetails: true,
+                        isProductDetails: true, image: AssetsPath.tires,
                       ),
                     );
                   },
@@ -67,10 +69,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    _buildImageGallery(),
-                    _buildImageGallery(),
-                    _buildImageGallery(),
-                    _buildImageGallery(),
+                    _buildImageGallery(AssetsPath.tires),
+                    _buildImageGallery(AssetsPath.tires),
+                    _buildImageGallery(AssetsPath.tires),
+                    _buildImageGallery(AssetsPath.tires),
                   ],
                 ),
               ),
@@ -115,17 +117,17 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(selectedIndex: 0),
+      //bottomNavigationBar: const BottomNavSection(),
     );
   }
 
-  Widget _buildImageGallery() {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
+  Widget _buildImageGallery(String image) {
+    return  Padding(
+      padding: const EdgeInsets.all(8.0),
       child: SizedBox(
         height: 64,
         width: 75,
-        child: CardImage(isFavorite: false),
+        child: CardImage(isFavorite: false, image: image,),
       ),
     );
   }

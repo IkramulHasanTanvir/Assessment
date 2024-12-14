@@ -16,5 +16,12 @@ class AssetsPath {
   static const String products = '$_assetsPath/products.png';
   static const String transaction = '$_assetsPath/transaction.png';
   static const String reports = '$_assetsPath/reports.png';
-  static const String more = '$_assetsPath/more.png';
+  static const String more = '$_assetsPath/setting.png';
+  static const String person1 = '$_assetsPath/person1.png';
+  static const String person2 = '$_assetsPath/person2.png';
+  static const String person3 = '$_assetsPath/person3.png';
+  static const String person4 = '$_assetsPath/person4.png';
+  static const String hiclipart = '$_assetsPath/hiclipart.png';
+  static const String hiclipart1 = '$_assetsPath/hiclipart1.png';
+  static const String battary = '$_assetsPath/battary.png';
 }

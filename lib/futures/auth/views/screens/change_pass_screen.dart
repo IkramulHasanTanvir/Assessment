@@ -19,7 +19,7 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
 
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
-  bool _obscureText = true;
+  bool _obscureText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _ChangePassScreenState extends State<ChangePassScreen> {
               SizedBox(height: size.height * 0.032),
               ElevatedButton(
                   onPressed: () {
-                    CustomNavigator.pushAndRemoveAll(
+                    CustomNavigator.pushNamed(
                         RouteName.pinConfirmationScreen);
                   },
                   child: const Text('Confirm')),

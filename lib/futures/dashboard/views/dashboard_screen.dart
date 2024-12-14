@@ -24,7 +24,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: const CustomAppBar(title: 'Dashboard', backButtonShow: false),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const TopSection(),
             Padding(
@@ -49,10 +49,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        CategoriesBox(),
-                        CategoriesBox(),
-                        CategoriesBox(),
-                        CategoriesBox(),
+                        CategoriesBox(
+                          title: 'Tires',
+                          image: AssetsPath.tires,
+                        ),
+                        CategoriesBox(
+                          title: 'Battery',
+                          image: AssetsPath.battary,
+                        ),
+                        CategoriesBox(
+                          title: 'Spark Plug',
+                          image: AssetsPath.hiclipart,
+                        ),
+                        CategoriesBox(
+                          title: 'Suspension',
+                          image: AssetsPath.hiclipart1,
+                        ),
                       ],
                     ),
                   ),
@@ -62,23 +74,38 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   const SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         MostPopularCard(
                           isDiscount: true,
+                          title: 'Michel Tires',
+                          image: AssetsPath.tires,
                         ),
                         SizedBox(width: 10),
-                        MostPopularCard(),
+                        MostPopularCard(
+                            title: 'Michel Suspension',
+                            image: AssetsPath.hiclipart),
                       ],
                     ),
                   ),
                   const SizedBox(height: 16),
                   const SectionTitle(title: 'Top Sales', viewAllShow: false),
                   const SizedBox(height: 16),
-                  const TopSalesCard(isDiscount: true,),
+                  const TopSalesCard(
+                    isDiscount: true,
+                    title: 'Michel Tires',
+                    image: AssetsPath.tires,
+                  ),
                   const SizedBox(height: 16),
-                  const TopSalesCard(),
+                  const TopSalesCard(
+                    title: 'Michel Suspension',
+                    image: AssetsPath.hiclipart,
+                  ),
                   const SizedBox(height: 16),
-                  const TopSalesCard(),
+                  const TopSalesCard(
+                    title: 'Michel Suspension',
+                    image: AssetsPath.hiclipart,
+                  ),
                   const SizedBox(height: 16),
                   Center(
                       child: Text(
@@ -88,17 +115,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             color: Colors.blue, fontWeight: FontWeight.w600)),
                   )),
                   const SizedBox(height: 16),
-                  const SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        SmallPromotionCard(
-                          title: '20% Discount on All Tires',
-                          subtitle: 'Avail this discount by 23rd June',
-                          image: AssetsPath.tires,
-                        ),
-                      ],
-                    ),
+                  const SmallPromotionCard(
+                    title: '20% Discount on All Tires',
+                    subtitle: 'Avail this discount by 23rd June',
+                    image: AssetsPath.tires,
                   ),
                 ],
               ),
@@ -106,6 +126,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
       ),
+      //bottomNavigationBar: const BottomNavSection(),
     );
   }
 }

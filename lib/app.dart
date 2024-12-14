@@ -3,8 +3,8 @@ import 'package:assessment/routes/route_page.dart';
 import 'package:assessment/theme/theme_data.dart';
 import 'package:flutter/material.dart';
 
-class BitGroupHoldings extends StatelessWidget {
-  const BitGroupHoldings({super.key});
+class BirGroupHoldings extends StatelessWidget {
+  const BirGroupHoldings({super.key});
 
   @override
   Widget build(BuildContext context) {

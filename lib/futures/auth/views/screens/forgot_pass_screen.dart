@@ -27,24 +27,22 @@ class _ForgotPassScreenState extends State<ForgotPassScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const LogoAndTitle(
-                title: 'Forgot Password',
-                subtitle: 'Please, your user-id to reset the password',
-              ),
-              SizedBox(height: size.height * 0.032),
-              _buildTextFormFiled(),
-              SizedBox(height: size.height * 0.032),
-              ElevatedButton(onPressed: () {
-                CustomNavigator.pushAndRemoveAll(RouteName.changePassScreen);
-              }, child: const Text('Submit')),
-              SizedBox(height: size.height * 0.3),
-              const AuthBottom(),
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const LogoAndTitle(
+              title: 'Forgot Password',
+              subtitle: 'Please, your user-id to reset the password',
+            ),
+            SizedBox(height: size.height * 0.032),
+            _buildTextFormFiled(),
+            SizedBox(height: size.height * 0.032),
+            ElevatedButton(onPressed: () {
+              CustomNavigator.pushNamed(RouteName.changePassScreen);
+            }, child: const Text('Submit')),
+            SizedBox(height: size.height * 0.3),
+            const AuthBottom(),
+          ],
         ),
       ),
     );

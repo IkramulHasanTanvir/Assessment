@@ -12,7 +12,7 @@ class ForgotSection extends StatefulWidget {
 }
 
 class _ForgotSectionState extends State<ForgotSection> {
-  bool isCheck = false;
+  bool isCheck = true;
 
   @override
   Widget build(BuildContext context) {

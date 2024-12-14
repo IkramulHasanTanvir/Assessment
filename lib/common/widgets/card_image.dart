@@ -1,5 +1,4 @@
 import 'package:assessment/common/constants.dart';
-import 'package:assessment/common/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 
 class CardImage extends StatelessWidget {
@@ -7,11 +6,12 @@ class CardImage extends StatelessWidget {
       {super.key,
       this.isDiscount = false,
       this.isProductDetails = false,
-      this.isFavorite = true});
+      this.isFavorite = true, required this.image});
 
   final bool isDiscount;
   final bool isProductDetails;
   final bool isFavorite;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,9 @@ class CardImage extends StatelessWidget {
         children: [
           Center(
             child: Image.asset(
-              AssetsPath.tires,
+              image,
+              height: 90,
+              width: 160,
             ),
           ),
           if (isDiscount)

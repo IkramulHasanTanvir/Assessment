@@ -7,15 +7,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TopSalesCard extends StatelessWidget {
-  const TopSalesCard({super.key,  this.isDiscount = false});
+  const TopSalesCard({super.key,  this.isDiscount = false, required this.title, required this.image});
 
   final bool isDiscount;
+  final String title;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.sizeOf(context);
     return GestureDetector(
       onTap: (){
-        CustomNavigator.pushNamed(RouteName.productDetailsScreen);
 
       },
       child: Container(
@@ -28,13 +30,13 @@ class TopSalesCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CardImage(isDiscount: isDiscount),
+              CardImage(isDiscount: isDiscount, image: image,),
               const SizedBox(width: 8),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Michel Tires',
+                    title,
                     style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
                           fontWeight: FontWeight.w600,
@@ -63,8 +65,11 @@ class TopSalesCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CardButton(title: 'Details', onTap: (){}),
-                      const SizedBox(width: 60),
+                      CardButton(title: 'Details', onTap: (){
+                        CustomNavigator.pushNamed(RouteName.productDetailsScreen);
+
+                      }),
+                       SizedBox(width: size.width * 0.15),
                       CardButton(title: 'Add',isRedColor: true, onTap: (){}),
                     ],
                   ),

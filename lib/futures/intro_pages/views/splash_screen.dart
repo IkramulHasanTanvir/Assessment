@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future<void> _moveNextScreen() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 5));
     CustomNavigator.pushAndRemoveAll(RouteName.promotionScreen);
   }
 
@@ -73,11 +73,12 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Positioned(
-            bottom: size.height * 0.08,
+            bottom: size.height * 0.07,
             left: 0,
             right: 0,
             child: const Text(
-              'Version - 1.3.1',
+              style: TextStyle(height: 2),
+              'Version - 1.3.1\nDevelop By: AR IT Firm',
               textAlign: TextAlign.center,
             ),
           ),

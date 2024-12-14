@@ -36,6 +36,7 @@ class _PinConfirmationScreenState extends State<PinConfirmationScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 44.0),
                 child: PinCodeTextField(
+                  keyboardType: TextInputType.number,
                   controller: _pinTEController,
                   backgroundColor: Colors.transparent,
                   appContext: (context),

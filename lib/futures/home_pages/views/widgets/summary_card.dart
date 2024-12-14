@@ -39,19 +39,26 @@ class SummaryCard extends StatelessWidget {
                   ),
                 ],
               ),
-              if (suffixIcon != null)
-                Icon(
-                  suffixIcon,
-                  size: 16,
-                  color: primaryColor,
-                ),
-              if (suffixText != null)
-                Text(
-                  suffixText!,
-                  style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                          fontWeight: FontWeight.w900, fontSize: 16)),
-                ),
+              Row(
+                children: [
+                  if (suffixText != null)
+                    Text(
+                      textAlign: TextAlign.end,
+                      suffixText!,
+                      style: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                              fontWeight: FontWeight.w900, fontSize: 16)),
+                    ),
+                  const SizedBox(width: 4),
+                  if (suffixIcon != null)
+                    Icon(
+                      suffixIcon,
+                      size: 16,
+                      color: primaryColor,
+                    ),
+                ],
+              )
+
             ],
           ),
         ),

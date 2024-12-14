@@ -15,10 +15,11 @@ class SmallPromotionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.sizeOf(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Container(
-        constraints: const BoxConstraints(maxWidth: 370),
+        constraints: const BoxConstraints(maxWidth: 360),
         child: DiscountBackground(
             isBigBackground: false,
             child: Padding(
@@ -28,7 +29,7 @@ class SmallPromotionCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
-                    width: 188,
+                    width: size.height * 0.188,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -61,7 +62,8 @@ class SmallPromotionCard extends StatelessWidget {
                           child: Text(
                             'Learn More',
                             style: GoogleFonts.poppins(
-                                textStyle: const TextStyle(color: Colors.white)),
+                                textStyle:
+                                    const TextStyle(color: Colors.white)),
                           ),
                         )
                       ],
@@ -72,6 +74,7 @@ class SmallPromotionCard extends StatelessWidget {
                     child: Image.asset(
                       image,
                       height: 99,
+                      width: 140,
                       fit: BoxFit.fitHeight,
                     ),
                   )

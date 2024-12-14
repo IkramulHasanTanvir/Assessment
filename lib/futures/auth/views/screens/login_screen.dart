@@ -32,27 +32,29 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const LogoAndTitle(
-                title: 'Login',
-                subtitle: 'Please enter your User ID and Password',
-              ),
-              SizedBox(height: size.height * 0.032),
-              _buildTextFormFiled(),
-              const ForgotSection(),
-              SizedBox(height: size.height * 0.032),
-              ElevatedButton(onPressed: () {
-                CustomNavigator.pushNamed(RouteName.homeScreen);
-              }, child: const Text('Login')),
-              SizedBox(height: size.height * 0.032),
-              const CustomDivider(title: 'More'),
-              SizedBox(height: size.height * 0.032),
-              const AuthBottom(isLogin: true),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const LogoAndTitle(
+              title: 'Login',
+              subtitle: 'Please enter your User ID and Password',
+            ),
+            SizedBox(height: size.height * 0.032),
+            _buildTextFormFiled(),
+            const ForgotSection(),
+            SizedBox(height: size.height * 0.032),
+            ElevatedButton(
+              onPressed: () {
+                CustomNavigator.pushAndRemoveAll(RouteName.homeScreen);
+              },
+              child: const Text('Login'),
+            ),
+            SizedBox(height: size.height * 0.032),
+            const CustomDivider(title: 'More'),
+            SizedBox(height: size.height * 0.032),
+            const AuthBottom(isLogin: true),
+          ],
         ),
       ),
     );

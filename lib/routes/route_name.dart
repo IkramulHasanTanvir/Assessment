@@ -14,4 +14,9 @@ abstract class RouteName {
   static String settingScreen = '/settingScreen';
   static String languageScreen = '/languageScreen';
   static String bottomNavBar = '/bottomNavBar';
+  static String areaManagerScreen = '/areaManagerScreen';
+  static String contactSupport = '/contactSupport';
+  static String privacyPolicy = '/privacyPolicy';
+  static String transactionsInfo = '/transactionsInfo';
+  static String moreScreen = '/moreScreen';
 }

@@ -15,6 +15,7 @@ const Color allCardColor = Color(0xFFFBDDD8);
 const Color viewAllColor = Color(0xFFFF804D);
 const Color navIndicatorColor = Color(0xFFA30000);
 const Color cardSubtitleColor = Color(0xFF595C5F);
+const Color statusColors = Color(0xFFF8E794);
 
 const Color primaryColor = Color(0xFFCC0000);
 

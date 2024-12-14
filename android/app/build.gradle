@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.assessment"
+    namespace = "com.example.assessment"  // Ensure this is unique to your app
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -18,23 +18,23 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
+
     defaultConfig {
-        applicationId "com.example.assessment"
-        minSdkVersion 21 // Set to 21 for Lollipop compatibility
-        targetSdkVersion 33 // Or the latest SDK version you're targeting
-        versionCode 1 // Update for every release (e.g., increment to 2 for a new release)
-        versionName "1.0" // Update for every release (e.g., "1.1" for minor updates)
+        applicationId "com.example.assessment"  // Ensure this matches the app's ID
+        minSdkVersion 21  // Lollipop (API 21)
+        targetSdkVersion 33  // Target the latest Android SDK version
+        versionCode 1  // Update with each release
+        versionName "1.0"  // Update for each release
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            // Use a proper signing config for release builds
+            signingConfig = signingConfigs.debug  // Replace this with your release key
         }
     }
 }
 
 flutter {
-    source = "../.."
+    source = "../.."  // Ensure this points to the Flutter project
 }

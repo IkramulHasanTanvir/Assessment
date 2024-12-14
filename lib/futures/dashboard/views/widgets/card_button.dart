@@ -15,19 +15,22 @@ class CardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      height: 30,
-      width: 59,
-      decoration: BoxDecoration(
-        color: isRedColor ? primaryColor : borderColor.withOpacity(0.7),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(
-        title,
-        style: GoogleFonts.poppins(
-            textStyle:
-                TextStyle(color: isRedColor ? Colors.white : Colors.black)),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        height: 30,
+        width: 59,
+        decoration: BoxDecoration(
+          color: isRedColor ? primaryColor : borderColor.withOpacity(0.7),
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: Text(
+          title,
+          style: GoogleFonts.poppins(
+              textStyle:
+                  TextStyle(color: isRedColor ? Colors.white : Colors.black)),
+        ),
       ),
     );
   }

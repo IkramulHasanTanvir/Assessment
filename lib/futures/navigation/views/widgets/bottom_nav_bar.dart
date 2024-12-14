@@ -19,6 +19,8 @@ class BottomNavBar extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Container(
+            color: Colors.transparent,
+            width: 90,
             height: 90,
           ),
           Container(

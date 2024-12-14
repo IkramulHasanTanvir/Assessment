@@ -2,6 +2,9 @@ import 'package:assessment/futures/auth/views/screens/change_pass_screen.dart';
 import 'package:assessment/futures/auth/views/screens/forgot_pass_screen.dart';
 import 'package:assessment/futures/auth/views/screens/login_screen.dart';
 import 'package:assessment/futures/auth/views/screens/pin_confirmation_screen.dart';
+import 'package:assessment/futures/auth/views/screens/area_manager_screen.dart';
+import 'package:assessment/futures/auth/views/screens/contact_support_screen.dart';
+import 'package:assessment/futures/auth/views/screens/privacy_policy_screen.dart';
 import 'package:assessment/futures/dashboard/views/dashboard_screen.dart';
 import 'package:assessment/futures/home_pages/views/home_screen.dart';
 import 'package:assessment/futures/intro_pages/views/promotion_screen.dart';
@@ -9,7 +12,10 @@ import 'package:assessment/futures/intro_pages/views/splash_screen.dart';
 import 'package:assessment/futures/navigation/views/bottom_nav_section.dart';
 import 'package:assessment/futures/product_details/views/product_details_screen.dart';
 import 'package:assessment/futures/search_products/views/search_products.dart';
+import 'package:assessment/futures/setting/views/language_screen.dart';
+import 'package:assessment/futures/setting/views/settings_screen.dart';
 import 'package:assessment/futures/transactions/views/transactions_date.dart';
+import 'package:assessment/futures/transactions/views/widgets/transactions_info.dart';
 import 'package:assessment/routes/route_name.dart';
 
 abstract class RoutePage {
@@ -28,5 +34,12 @@ abstract class RoutePage {
     RouteName.productDetailsScreen: (context) => const ProductDetailsScreen(),
     RouteName.searchProductsScreen: (context) => const SearchProducts(),
     RouteName.transactionsScreen: (context) => const TransactionsDate(),
+    RouteName.transactionsScreen: (context) => const TransactionsDate(),
+    RouteName.areaManagerScreen: (context) => const AreaManagerScreen(),
+    RouteName.contactSupport: (context) => const ContactSupportScreen(),
+    RouteName.privacyPolicy: (context) => const PrivacyPolicyScreen(),
+    RouteName.transactionsInfo: (context) => const TransactionsInfo(),
+    RouteName.moreScreen: (context) => const SettingsScreen(),
+    RouteName.languageScreen: (context) => const LanguageScreen(),
   };
 }
